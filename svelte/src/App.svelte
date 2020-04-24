@@ -1,14 +1,31 @@
 <script>
 	import About from './components/About.svelte';
+	import Text from './components/Text.svelte';
+	import Person from './components/Person.svelte';
+
 	export let name;
 	export let lastName;
-	let logo = "https://arepa.s3.amazonaws.com/svelte-logo.png"
+	let logo = "https://arepa.s3.amazonaws.com/svelte-logo.png";
+
+	const data = {
+		id: 1,
+		name: "Ariel",
+		lastName: "Monterroso",
+		age: 24,	
+	};
+
+
 </script>
 
 <main>
 	<h1>Hello {name} {lastName}!</h1>
 	<About />
-	
+	<Text anotherText="Hola everyone"/>
+	<Text/>
+	<!--  option 1   --> 
+	<Person id={data.id} name={data.name} lastName={data.lastName} age={data.age} />
+	<!--  option 2   -->
+	<Person {...data} />
 	<img src={logo} alt="logo">
 </main>
 
