@@ -1,6 +1,10 @@
 <script>
 
 let someText = "Font-End Developer on Dooply";
+let count = 0 ;
+function  handleClick (){ 
+    count += 1;
+}
 
 </script>
 
@@ -14,4 +18,5 @@ p {
 
 <div class="About">
     <p>{someText}</p>
+    <button on:click={handleClick}> Click {count === 0 ? '' : count}</button>
 </div>
