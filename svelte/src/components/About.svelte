@@ -1,5 +1,5 @@
 <script>
-
+import Button from './Button.svelte';
 let someText = "Font-End Developer on Dooply";
 let count = 0 ;
 let styles = {
@@ -38,6 +38,8 @@ function  handleClick (){
     {:else}
          <p class="theme-dark"><span>HEllO DARK MODE</span></p>
     {/if}
+    <Button text="Click" count={count} on:click={handleClick}/>
+    <Button text="Dark Mode" on:click={toggle}/>
     <button on:click={handleClick}> Click {count === 0 ? '' : count}</button>
     <button on:click={toggle}>Dark Mode</button>
     
